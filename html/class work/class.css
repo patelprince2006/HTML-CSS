@@ -1,0 +1,38 @@
+body {
+    
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-image: url("book.png");
+}
+h1{
+    text-align: center;
+    background-color: rgb(241, 179, 102);
+    height: 60px;
+}
+
+button{
+
+    background-color: aquamarine;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    position: inherit;
+}
+  .center
+     {
+       flex: 1;
+       background-color: blue;
+       padding: 15px;
+       text-align: center;
+       
+    
+}
+.left,.right{
+   background-color: bisque;
+}
+main body{
+
+   color: aqua;
+
+}
