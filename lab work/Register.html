@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="registration.css">
 </head>
 <body>
+     <form action="login.html" method="get">
     <table>
-        <tr>
-                <caption> Registration Form</caption>
-                  
-                  <td><input class="input-box" type="text" value="full name" required></td>
+       
+                <th> <h2>Registration Form</h2></th>
+            <tr>       
+                  <td><input class="input-box" type="text" name="full name" placeholder="Full Name" required /></td>
 
         </tr>
-              <tr><td><input class="input-box" type="text" name="roll no." value="Roll no."></td></tr>
-              <tr>  <td><select class="input-box" type="radio" name="institute" optional>
+              <tr><td><input class="input-box" type="text" name="roll no." placeholder="Roll no." required /></td></tr>
+              <tr>  <td><select class="input-box" type="radio" name="institute" required>
                       <option value="" disabled selected>Select your institute</option>
                      <option value="ce">computer engineering</option>
                      <option value="ec">electronic comunication</option>
@@ -24,20 +25,23 @@
                   </tr> 
                 <tr>
                 <td>
-                    <select class="input-box">
+                    <select class="input-box" required>
                  <option value="" disabled selected>Select your gender</option>
                  <option value="male">male</option>
                  <option value="female">female</option>
                </select>
                </td> 
                </tr> 
-           <td>           
+           <td>  
+        <a href="login.html" class="login">         
         <button class="button"><option>Submit</option>
+            </a>
         </button>
         <button  class="button">
                 <option>Reset</option>
         </button>
         </td>
     </table>
+     </form>
 </body>
 </html>

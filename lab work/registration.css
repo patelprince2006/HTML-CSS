@@ -18,7 +18,7 @@ table {
     border: 2px solid;
 }
 th, td{
-    text-align: left;
+    text-align: center;
     margin: 10px;
     text-size-adjust: 200px;
     width: 100%;
@@ -28,17 +28,6 @@ th, td{
 .text{
      display: grid;
      grid-column: auto;
-}
-
-caption {
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.521);
-    border-spacing: 15px;
-    border: 2px solid;
-     background-color: rgba(224, 227, 228, 0.921);
-    padding: 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
 
 .login-container{
@@ -80,4 +69,9 @@ button {
     .button{
          width: 120px;
          box-sizing: border-box;
+    }
+
+    .login{
+        color: white;
+        text-decoration: none;
     }
