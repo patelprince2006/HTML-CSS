@@ -1,9 +1,20 @@
+@media screen and (min-width: 768px) {
+  body{
+     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body{
+     width: 50%;
+  }
+}
 body {
     background-image: url('charu.jpg');
     background-size: 100%;
     
     background-color: #f4f4f4a9;
     display: grid;
+    grid-column: auto;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -27,7 +38,7 @@ th, td{
 
 .text{
      display: grid;
-     grid-column: auto;
+     grid-template-columns: auto;
 }
 
 .login-container{

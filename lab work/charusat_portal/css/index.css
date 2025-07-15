@@ -1,4 +1,13 @@
-
+@media screen and (min-width: 768px) {
+  body{
+     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body{
+     width: 50%;
+  }
+}
 h1{
   font-size: 60px;
   text-align: center;
