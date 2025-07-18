@@ -15,10 +15,6 @@
   color: white;
   padding: 1px;
 }
-.img{
-    display: flex;
-    text-align: left;
-}
 .nav{
   
   padding: 10px;
@@ -32,8 +28,10 @@ body{
 
 
 footer{
+   
   background-color: rgb(23, 135, 200);
   height: 50px;
  display: flex;
  justify-content: center;
+ 
 }

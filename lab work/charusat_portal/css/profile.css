@@ -9,16 +9,17 @@
   }
 }
 
+
 .header{
        background-color: #003366;
-  line-height: 60px;
+  line-height: 20px;
   color: white;
   padding: 1px;
 }
-.img{
-    display: flex;
-    text-align: left;
-}
+.img{  display: flex;
+       text-align: left;
+  }
+
 .nav{
   
   padding: 10px;
