@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    input.error-input {
+      border: 2px solid red;
+      background-color: #ffe6e6;
+    }
+    .success {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid green;
+      background-color: #e6ffe6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <label>Full Name:
+      <input type="text" id="fullname" name="fullname" required>
+      <span class="error" id="fullnameError"></span>
+    </label><br><br>
+
+    <label>Student ID:
+      <input type="text" id="studentid" name="studentid" required pattern="[A-Za-z0-9]+">
+      <span class="error" id="studentidError"></span>
+    </label><br><br>
+
+    <label>Email:
+      <input type="email" id="email" name="email" required>
+      <span class="error" id="emailError"></span>
+    </label><br><br>
+
+    <label>Username:
+      <input type="text" id="username" name="username" required>
+      <span class="error" id="usernameError"></span>
+    </label><br><br>
+
+    <label>Password:
+      <input type="password" id="password" name="password" required>
+      <span class="error" id="passwordError"></span>
+    </label><br><br>
+
+    <label>Confirm Password:
+      <input type="password" id="confirmpassword" name="confirmpassword" required>
+      <span class="error" id="confirmpasswordError"></span>
+    </label><br><br>
+
+    <label>Phone Number:
+      <input type="text" id="phone" name="phone" required>
+      <span class="error" id="phoneError"></span>
+    </label><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="output" class="success"></div>
+
+  <script>
+
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    const usernameRegex = /^[a-zA-Z0-9]{5,15}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    function validateField(id, pattern, message) {
+      const input = document.getElementById(id);
+      const errorSpan = document.getElementById(id + "Error");
+      if (!pattern.test(input.value.trim())) {
+        errorSpan.textContent = message;
+        input.classList.add("error-input");
+        return false;
+      } else {
+        errorSpan.textContent = "";
+        input.classList.remove("error-input");
+        return true;
+      }
+    }
+
+    function validatePasswords() {
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirmpassword").value;
+      const errorSpan = document.getElementById("confirmpasswordError");
+
+      if (password !== confirm) {
+        errorSpan.textContent = "Passwords do not match.";
+        document.getElementById("confirmpassword").classList.add("error-input");
+        return false;
+      } else {
+        errorSpan.textContent = "";
+        document.getElementById("confirmpassword").classList.remove("error-input");
+        return true;
+      }
+    }
+
+    function validateForm() {
+      const validName = validateField("fullname", nameRegex, "Only letters and spaces allowed.");
+      const validUsername = validateField("username", usernameRegex, "5–15 alphanumeric characters.");
+      const validPassword = validateField("password", passwordRegex, "Min 8 chars with letter, digit, special char.");
+      const validPhone = validateField("phone", phoneRegex, "Must be exactly 10 digits.");
+      const passwordsMatch = validatePasswords();
+
+      if (validName && validUsername && validPassword && validPhone && passwordsMatch) {
+        showOutput();
+        return false; 
+      }
+
+      return false;
+    }
+
+    function showOutput() {
+      const output = document.getElementById("output");
+      const name = document.getElementById("fullname").value;
+      const id = document.getElementById("studentid").value;
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const phone = document.getElementById("phone").value;
+
+      output.innerHTML = `
+        <h3>Registration Successful!</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Student ID:</strong> ${id}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Username:</strong> ${username}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+      `;
+    }
+
+    document.getElementById("fullname").addEventListener("blur", () =>
+      validateField("fullname", nameRegex, "Only letters and spaces allowed.")
+    );
+    document.getElementById("username").addEventListener("blur", () =>
+      validateField("username", usernameRegex, "5–15 alphanumeric characters.")
+    );
+    document.getElementById("password").addEventListener("blur", () =>
+      validateField("password", passwordRegex, "Min 8 chars with letter, digit, special char.")
+    );
+    document.getElementById("phone").addEventListener("blur", () =>
+      validateField("phone", phoneRegex, "Must be exactly 10 digits.")
+    );
+    document.getElementById("confirmpassword").addEventListener("blur", validatePasswords);
+  </script>
+
+</body>
+</html>

@@ -2,24 +2,39 @@
 <html>
 <head>
   <title>CHARUSAT Portal - Login</title>
-  <link rel="stylesheet" href="/lab work/charusat_portal/css/registration.css">
+  <link rel="stylesheet" href="/lab work/charusat_portal/css/login.css">
 </head>
 <body>
-  
-  <div class="login-container">
-    <h2>CHARUSAT PORTAL - Login</h2>
+   <header>
+        <div >
+            <div class="header">
+            <img class="img" src="CHARUSAT_RGTD_LOGO.webp" alt="CHARUSAT" width="300px">
+            
+           <h1>Login</h1>
+            </div>
+          </header>
+ 
     <form action="dashboard.html" method="get">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <table>
+       <div >
+    <th> <h2>CHARUSAT PORTAL - Login</h2> </th>
+     <tr> 
+     <td> <input class="input-box" type="text" id="username" placeholder="username" required></td>
+      </tr>
       <p>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <tr><td>
+      <input class="input-box" type="password" id="password" placeholder="password" required>
+      </td></tr>
       </p>
-      <button type="submit">Login</button>
-
+      <tr><td>
+      <button class="button" type="submit">Login</button>
+      </td></tr>
+      <tr><td>
       <div class="forgot-password">
         <a href="#">Forgot Password?</a>
       </div>
+      </td></tr>
+      </table>
     </form>
   </div>
 </body>

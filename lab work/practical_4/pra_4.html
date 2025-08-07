@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body{
+         
+         text-align: left;
+         margin-bottom: 50px;
+      }
+        .faq{
+            align-items: center;
+        }
+
+        .quastion{
+            padding: 10px;
+            width: 20%;
+            border: 2px solid black;
+            background-color: rgb(184, 181, 181);
+        }
+        
+        .p{
+            width: 20%;
+            height: 30px;
+            border: 2px solid black;
+            background-color: rgb(184, 181, 181);
+        }
+        .answer{
+           display: none;
+           padding-bottom: 20px;
+
+        }
+        .faq.answer.active{
+            display: none;
+            
+        }
+    </style>
+<body>
+    
+
+      
+        <h1>FAQs</h1> 
+         <div class="faq">
+             <div class="question" onclick="active()">What is the dom?</div>
+             <div class="answer">Dom is document object model</div>
+         </div>
+         <div class="faq">
+            <div class="question" onclick="active()">What is the dom?</div>
+            <div class="answer">Dom is document object model</div>
+         </div>
+     
+        <button id="notification">🔔Show Notification</button>
+     
+        <script>
+
+            // function active(){
+            //  document.querySelectorAll('.question').forEach(q=>{
+            //     q.addEventListener('click',active())={
+            //          q,parentElement,classList,toggle('active');
+            //     }
+            //  });
+            // };
+         
+            
+        </script>
+</body>
+</html>

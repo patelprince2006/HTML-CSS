@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Student Form</title>
+  <style>
+    .error-input {
+      border: 2px solid red;
+      background-color: #ffe6e6;
+    }
+    #msg {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+  <form onsubmit="return validateForm()">
+    <label>Full Name: <input type="text" id="name" required></label><br><br>
+    <label>Email: <input type="email" id="email" required></label><br><br>
+    <label>Password: <input type="password" id="password" required></label><br><br>
+    <label>Confirm Password: <input type="password" id="confirm" required></label><br><br>
+    <button type="submit">Register</button>
+  </form>
+
+  <!-- <p id="msg"></p> -->
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const confirm = document.getElementById("confirm");
+    //   const msg = document.getElementById("msg");
+
+      let valid = true;
+
+      // Reset styles
+    //   [name, email, password, confirm].forEach(input => {
+    //     input.classList.remove("error-input");
+    //   });
+
+      if (name.value.trim() === "") {
+        name.classList.add("error-input");
+        valid = false;
+      }
+
+      if (!email.value.includes("@") || !email.value.includes(".")) {
+        email.classList.add("error-input");
+        valid = false;
+      }
+
+      if (password.value.length < 6) {
+        password.classList.add("error-input");
+        valid = false;
+      }
+
+      if (password.value !== confirm.value) {
+        confirm.classList.add("error-input");
+        valid = false;
+      }
+
+      if (valid) {
+        msg.style.color = "green";
+        msg.textContent = "Registration successful!";
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Please correct the errors.";
+      }
+
+      return false; // prevent actual form submission
+    }
+  </script>
+
+</body>
+</html>

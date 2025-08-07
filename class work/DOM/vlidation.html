@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Regex Validation with Red Box</title>
+  <style>
+    .error {
+      border: 2px solid red;
+      background-color: #ffe6e6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Form</h2>
+
+  <form onsubmit="return validate()">
+    <input type="text" id="name" placeholder="Enter your name"><br><br>
+    <input type="text" id="phone" placeholder="Enter 10-digit phone"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validate() {
+      const nameInput = document.getElementById("name");
+      const phoneInput = document.getElementById("phone");
+
+      const nameValue = nameInput.value.trim();
+      const phoneValue = phoneInput.value.trim();
+
+      const nameRegex = /^[a-zA-Z]+$/;     // only letters
+      const phoneRegex = /^[0-9]{10}$/;    // exactly 10 digits
+
+      let valid = true;
+
+      // Reset previous red boxes
+      nameInput.classList.remove("error");
+      phoneInput.classList.remove("error");
+
+      // Name validation
+      if (!nameRegex.test(nameValue)) {
+        nameInput.classList.add("error");
+        valid = false;
+      }
+
+      // Phone validation
+      if (!phoneRegex.test(phoneValue)) {
+        phoneInput.classList.add("error");
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Form submitted successfully!");
+      }
+
+      return false; // Prevent actual form submission for demo
+    }
+  </script>
+
+</body>
+</html>

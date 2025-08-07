@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student table</title>
+</head>
+<body>
+    <input id="nameinput" type="text" placeholder="name">
+    <button onclick="addrow()">Add row</button>
+    <table border="1" id="studenttable">
+       <thead>
+           <tr>
+             <td>Name</td>
+             <td>Action</td>
+             
+           </tr>
+       </thead>
+       <tbody>
+          <!-- add new row -->
+       </tbody>
+    </table>
+</body>
+<script>
+    function addrow(){
+        const name = document.getElementById("nameinput").value.trim();
+    
+        const tableBody = document.getElementById("studenttable").getElementsByTagName("tbody")[0];
+        const newrow = tableBody.insertRow();
+
+        const namecell = newrow.insertCell(0);
+        const actioncell = newrow.insertCell(1);
+
+        namecell.textContent = name;
+        actioncell.innerHTML = `<button onclick="deleterow(this)">Delete</button>`;
+
+        document.getElementById("nameinput").value = "";
+    }
+
+    function deleterow(btn){
+        const row = btn.parentNode.parentNode;
+        row.remove();
+    }
+</script>
+</html>

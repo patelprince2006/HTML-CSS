@@ -41,8 +41,9 @@ body {
 }
 
 table {
-    margin-left: 500px;
-    width: 500px;
+    /* margin-left: 500px; */
+    margin-left: 600px;
+    width: 50px;
     background-color: rgb(214, 218, 216);
     padding: 20px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.521);
@@ -66,17 +67,6 @@ th, td{
      display: grid;
      grid-template-columns: auto;
 }
-/* 
-.login-container{
-     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.521);
-    border-spacing: 15px;
-    border: 2px solid;
-     background-color: rgba(224, 227, 228, 0.921);
-    padding: 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-} */
 
 select {
     width: 100%;
@@ -87,12 +77,13 @@ select {
 button {
     padding: 10px 10px;
     margin: 5px 5px 0 0;
+    
     border: none;
     border-radius: 6px;
     background-color: #007bff;
     color: white;
     font-size: 1rem;
-    width: 80%;
+    width: 100px;
     justify-content: center;
     
 }
@@ -104,11 +95,12 @@ button {
     }
 
     .button{
-         width: 120px;
+         width: 250px;
          box-sizing: border-box;
     }
 
     .login{
         color: white;
         text-decoration: none;
+
     }

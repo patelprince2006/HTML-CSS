@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQs</title>
+    <style>
+        .faq .answer {
+            display: none;
+        }
+        .faq.active .answer {
+            display: block;
+        }
+        .faq {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FAQs</h1>
+
+    <div class="faq">
+        <div class="question">What is the DOM?</div>
+        <div class="answer">DOM is the Document Object Model.</div>
+    </div>
+
+    <div class="faq">
+        <div class="question">What is JavaScript?</div>
+        <div class="answer">JavaScript is a programming language for the web.</div>
+    </div>
+
+    <button id="notification">🔔Show Notification</button>
+
+    <script>
+        // Add click event to all questions
+        document.querySelectorAll('.question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewid=" content="width=device-width, initial-scale=1.0">
+    <title>Calculator ✅</title>
+</head>
+<Style>
+    #val{
+        width: 90px;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 1rem;
+        width: 160px;
+        text-align: center; 
+    }
+    
+    .c{
+        background-color: red;
+    }
+
+    .eq{
+        background-color: green;
+    }
+
+    table{
+         background-color: aquamarine;
+         border-radius: 1rem;    
+    }
+
+    h2{
+        color: rgb(8, 8, 8);
+    }
+
+   #o,#per,#exp{
+         width: 30px
+   }
+
+</Style>
+<body>
+   <table>
+    
+        <tbody>
+            <tr>
+                <td>
+                    <h2>Calculator</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="val" type="text">
+                     <button type="reset" class="c" id="per" onclick="clearDisplay()" >C</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="o" onclick="append('1')" >1</button>
+                    <button id="o" onclick="append('2')" >2</button>
+                    <button id="o" onclick="append('3')" >3</button>
+                    <button id="exp" onclick="appendOperator('+')">+</button>
+                    <button id="o" onclick="append('4')" >4</button>
+                    <button id="o" onclick="append('5')" >5</button>
+                    <button id="o" onclick="append('6')" >6</button>
+                    <button id="exp" onclick="appendOperator('-')">-</button>
+                    <button id="o" onclick="append('7')" >7</button>
+                    <button id="o" onclick="append('8')" >8</button>
+                    <button id="o" onclick="append('9')" >9</button>
+                    <button id="exp" onclick="appendOperator('*')">*</button>
+                    <button id="o" onclick="append('.')" >.</button>
+                    <button id="o" onclick="append('0')" >0</button>
+
+                    <button class="eq" id="per" onclick="calculate()" >=</button>
+                    
+                    <button id="exp" onclick="appendOperator('/')" >/</button>
+                </td>
+        </tbody>
+    </table>
+</body>
+<script>
+    function append(value) {
+        document.getElementById("val").value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById("val").value = "";
+    }
+
+    function calculate() {
+        const val = document.getElementById("val");
+        try {
+            val.value = eval(val.value);
+        } catch (e) {
+            val.value = "Error";
+        }
+    }
+
+    function appendOperator(op) {
+         const val = document.getElementById("val");
+    const lastChar = val.value[val.value.length - 1];
+
+    if ('+-*/'.includes(lastChar)) {
+      val.value = val.value.slice(0, -1) + op;
+    } else {
+      append(op);
+    }
+  }
+
+</script>
+</html>
