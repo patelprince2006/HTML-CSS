@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter name">
+    <button onclick="detail()">Click Here</button>
+    <ul id="studentdetail"></ul>
+
+    <script>
+        function detail() {
+            const namevalue = document.getElementById("name").value;
+
+            const Student = {
+                name: namevalue,
+                introduction: function() {
+                    return "Hi, " + this.name;
+                }
+            };
+
+            const li = document.createElement("li");
+            li.innerHTML =
+                "<b>Name:</b> " + Student.name +
+                "<br><b>Intro:</b> " + Student.introduction();
+
+            const details = document.getElementById("studentdetail");
+            details.appendChild(li);
+        }
+    </script>
+</body>
+</html>

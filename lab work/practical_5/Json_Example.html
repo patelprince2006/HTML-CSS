@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title>
+</head>
+<body>
+    <button id="add" onclick="add()">ADD Data</button>
+    <button id="delete">Delete Data</button>
+    <table border="1">
+    <thead>
+    <tr>
+        <th>
+    <input type="text" id="tid" placeholder="id">
+    
+     </th>
+    <th>
+    <input type="text" id="tname" placeholder="Name">
+    </th>
+    <th>
+
+    <input type="text" id="tbran" placeholder="branch">
+
+    </th>
+    </tr>
+    </thead>
+    <tbody id="display">
+       </tbody>
+    </table>
+    <script>
+    let students=[];
+
+    function add(){
+        let id = document.getElementById("tid").value;
+        let name=document.getElementById("tname").value;
+        let branch=document.getElementById("tbran").value;
+
+          let student={
+            id,
+            name,
+            branch,
+        };
+
+        students.push(student);
+
+        displayStudents();
+          document.getElementById("tid").value = "";
+            document.getElementById("tname").value = "";
+            document.getElementById("tbran").value = "";
+    }
+    
+        function displayStudents() {
+      const body = document.getElementById("display");
+      body.innerHTML = "";
+      students.forEach((stu, index) => {
+        let row = `<tr>
+                    <td>${stu.id}</td>
+                    <td>${stu.name}</td>
+                    <td>${stu.branch}</td>
+                  </tr>`;
+        body.innerHTML += row;
+      });
+    }
+
+    document.getElementById("delete").addEventListener("click", function(){
+       if (students.length > 0) {
+        students.pop(); 
+        displayStudents();
+      } 
+    })
+
+    //---------json--------
+    // let json=JSON.stringify(student);
+    
+    //json to object => json.parse()
+    //object to jesonstring => json.stringfy
+    </script>
+</body>
+</html>

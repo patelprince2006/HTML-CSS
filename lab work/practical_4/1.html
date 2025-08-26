@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <title>FAQs</title>
     <style>
+        body{
+
+            text-align: left;
+        }
+        h1{
+            text-align: center;
+            padding-right: 900px;
+        }
+        .question{
+            display: block;
+            width: 600px;
+            text-align: left;
+            /* background-color: rgba(43, 61, 226, 0.667); */
+            border: 2px solid black;
+            margin-bottom: 1px;
+        }
         .faq .answer {
+            display: block;
+            width: 600px;
+            text-align: left;
             display: none;
+            background-color: rgba(215, 250, 220, 0.615);
+            
         }
         .faq.active .answer {
             display: block;
         }
         .faq {
             margin-bottom: 10px;
-            cursor: pointer;
+        
         }
+        .notification .block{
+            display: block;
+        }
+
+        .faq:hover{
+            background-color: rgba(128, 128, 128, 0.208);
+            width: 600px;
+        }
+
     </style>
 </head>
 <body>
@@ -30,15 +60,20 @@
         <div class="answer">JavaScript is a programming language for the web.</div>
     </div>
 
-    <button id="notification">🔔Show Notification</button>
-
+    
     <script>
-        // Add click event to all questions
+
         document.querySelectorAll('.question').forEach(q => {
             q.addEventListener('click', () => {
                 q.parentElement.classList.toggle('active');
             });
         });
+        
+        
+        //  function display(){
+        //    let para =document.getElementById("para");
+        //    para.display=document.createElement("block");
+        //  }
     </script>
 
 </body>

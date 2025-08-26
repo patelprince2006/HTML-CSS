@@ -20,13 +20,13 @@
     li.textContent = taskText;
 
     // Mark as completed
-    li.addEventListener("click", function () {
-      li.style.textDecoration = li.style.textDecoration === "line-through" ? "none" : "line-through";
-    });
+    // li.addEventListener("click", function () {
+    //   li.style.textDecoration = li.style.textDecoration === "line-through" ? "none" : "line-through";
+    // });
 
     // Right click to delete
-    li.addEventListener("contextmenu", function (e) {
-      e.preventDefault();
+    li.addEventListener("click", function () {
+      // e.preventDefault();
       li.remove();
     });
 
