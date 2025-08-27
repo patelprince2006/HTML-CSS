@@ -17,18 +17,17 @@
 
             const Student = {
                 name: namevalue,
-                introduction: function() {
-                    return "Hi, " + this.name;
-                }
+               
             };
-
+        
             const li = document.createElement("li");
             li.innerHTML =
-                "<b>Name:</b> " + Student.name +
-                "<br><b>Intro:</b> " + Student.introduction();
-
+                "<b>Name:</b> " + Student.name;
+                
             const details = document.getElementById("studentdetail");
             details.appendChild(li);
+            
+
         }
     </script>
 </body>
