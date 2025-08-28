@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<style>
+    .content{
+        border: 1px solid black;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .a,.b{
+        
+        border: 1px solid black;
+        
+    }
+    .mix{ 
+        border: 1px solid black;
+        display: grid;
+        grid-template-rows: 2fr 1fr 1fr;
+        
+    }
+    .d{
+        border: 1px solid black;
+        grid-template-rows:1fr 1fr ;
+    }
+    .min{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+  
+</style>
+<body>
+    <div class="content">
+        <div class="a">A</div>
+        <div class="b">b</div>
+        <div class="mix">
+        <div class="c">c</div>
+         <div class="min">
+        <div class="d">d</div>
+        <div class="d">e</div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
