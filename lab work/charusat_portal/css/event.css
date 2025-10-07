@@ -20,7 +20,8 @@
 
 footer{
   background-color: rgb(23, 135, 200);
-  height: 50px;
- display: flex;
+  display: flex;
+ align-items: center;
  justify-content: center;
+ text-align: center;
 }

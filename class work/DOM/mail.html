@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gmail</title>
+</head>
+<body>
+    <!-- <input type="text"  id="mail"> -->
+    <input type="text" id="text">
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+    <button onclick="com()"> submit</button>
+</body>
+ <script>
+    function com(){
+    let mail=document.getElementById("text").value;
+    let mails=/[a-zA-Z0-9]+@[a-zA-Z]+\.com/;
+
+    if(mails.test(mail)){
+        alert("mail is conform");
+    }
+    else{
+        alert("inalid");
+    }
+    let li=document.createAttribute(li);
+
+    
+}
+ </script>
+</html>

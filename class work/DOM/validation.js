@@ -1,10 +1,10 @@
 // var name="1as";
 
-//with both a-z and anything
-// var reg=/[a-z]/;
+
+// var reg=/[a-z]/;      //with both a-z and anything
 let reg=document.getElementById("name").value.trim();
-//only a-z are valid
-let regi=/^[a-z]/;
+
+let regi=/^[a-z]/; //only a-z are valid
 
 let regu=document.getElementById("number").value.trim();
 // var num="41265265";
@@ -24,6 +24,7 @@ function valid(){
        regu.add("");
     }
 }
+
 // for both small and capital
 // var reg=/[a-zA-Z]/;
 

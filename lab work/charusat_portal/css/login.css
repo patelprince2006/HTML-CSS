@@ -104,3 +104,10 @@ button {
         text-decoration: none;
 
     }
+    footer{
+  background-color: rgb(23, 135, 200);
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+}

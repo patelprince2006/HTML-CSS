@@ -44,10 +44,8 @@
       padding: 10px 20px;
       border-radius: 5px;
       display: none;
-      /* z-index: 9999; */
     }
 
-    /* ======= Slider ======= */
     #slider {
       margin: 30px auto;
       max-width: 500px;
@@ -67,7 +65,6 @@
       display: block;
     }
 
-    /* ======= Theme Toggle ======= */
     .dark-theme {
       background-color: #222;
       color: white;
@@ -100,18 +97,15 @@
 <body>
   <h1>Interactive Portal UI</h1>
 
-  <!-- ======= Notification ======= -->
   <div id="notification" class="popup">
     🚨 This is a notification! <button onclick="hideNotification()">Dismiss</button>
   </div>
 
-  <!-- ======= FAQ Section ======= -->
   <section>
     <h2>FAQs</h2>
     <div id="faq-container"></div>
   </section>
 
-  <!-- ======= Slider Section ======= -->
   <section id="slider-section">
     <h2>Slider</h2>
     <div id="slider">
@@ -122,12 +116,9 @@
     <button onclick="nextSlide()">Next Slide</button>
   </section>
 
-  <!-- ======= Theme Toggle Button ======= -->
   <button class="theme-button" onclick="toggleTheme()">🌓 Toggle Theme</button>
 
-  <!-- ======= JavaScript ======= -->
   <script>
-    // === Static JSON Data for FAQs ===
     const faqs = [
       {
         "question": "What is JavaScript?",
@@ -143,7 +134,6 @@
       }
     ];
 
-    // === Render FAQs ===
     const faqContainer = document.getElementById("faq-container");
     faqs.forEach(faq => {
       const card = document.createElement("div");
@@ -162,7 +152,6 @@
       }
     });
 
-    // === Notification Popup ===
     function showNotification() {
       document.getElementById("notification").style.display = "block";
     }
@@ -175,7 +164,6 @@
       setTimeout(showNotification, 1000);
     };
 
-    // === Slider Logic ===
     let currentSlide = 0;
     const slides = document.querySelectorAll(".slide");
 
@@ -185,10 +173,10 @@
       slides[currentSlide].classList.add("active");
     }
 
-    // === Theme Toggle ===
     function toggleTheme() {
       document.body.classList.toggle("dark-theme");
     }
   </script>
+   <footer>Name : Prince Patel<br>Id : 24CE092</footer>
 </body>
 </html>
