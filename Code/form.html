@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Validation</title>
 </head>
+<style>
+  #s{
+    color: red;
+  }
+  #s1{
+    color: red;
+  }
+</style>
 <body>
   <h2>Form Validation</h2>
 
@@ -29,9 +37,8 @@
 
       // Name validation
       if(!str.test(txtname.value)){
-        document.getElementById('s').style.color = 'red';
         document.getElementById('s').innerHTML = '*Invalid Input';
-        txtname.focus();
+        // txtname.focus();
         isValid = false;
       } else {
         document.getElementById('s').innerHTML = ''; // clear error
@@ -39,9 +46,8 @@
 
       // Phone validation
       if(!num.test(txtphone.value)){
-        document.getElementById('s1').style.color = 'red';
         document.getElementById('s1').innerHTML = '*Invalid Input';
-        if(isValid) txtphone.focus(); // focus only if name is valid
+        //txtphone.focus(); // focus only if name is valid
         isValid = false;
       } else {
         document.getElementById('s1').innerHTML = ''; // clear error

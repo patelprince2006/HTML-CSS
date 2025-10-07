@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add & Delete Table Rows</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    table {
+      width: 60%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-btn {
+      background-color: #28a745;
+      color: white;
+      margin-bottom: 15px;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student List</h2>
+  <button class="add-btn" onclick="addRow()">Add Row</button>
+
+  <table id="myTable">
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>John</td>
+      <td>21</td>
+      <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+  </table>
+
+  <script>
+    function addRow() {
+      const table = document.getElementById("myTable");
+      const rowCount = table.rows.length; // includes header
+      const row = table.insertRow(rowCount);
+
+      const cell1 = row.insertCell(0);
+      const cell2 = row.insertCell(1);
+      const cell3 = row.insertCell(2);
+      const cell4 = row.insertCell(3);
+
+      cell1.textContent = rowCount; // auto number
+      cell2.innerHTML = `<input type="text" placeholder="Enter name">`;
+      cell3.innerHTML = `<input type="number" placeholder="Enter age">`;
+      cell4.innerHTML = `<button class="delete-btn" onclick="deleteRow(this)">Delete</button>`;
+    }
+
+    function deleteRow(btn) {
+      const row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+
+      // Re-number rows
+      const table = document.getElementById("myTable");
+      for (let i = 1; i < table.rows.length; i++) {
+        table.rows[i].cells[0].textContent = i;
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ + Theme Toggle</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .darktheme {
+      background-color: black;
+      color: white;
+    }
+
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .answer {
+      display: none;
+      color: gray;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="faq-container">
+    <p class="question">How are you?</p>
+    <p class="answer">I am Fine.</p>
+
+    <p class="question">Any?</p>
+    <p class="answer">Any.</p>
+  </div>
+
+  <button id="color" onclick="theme()">Toggle Theme</button>
+
+  <script>
+    // Theme toggle
+    function theme() {
+      document.body.classList.toggle("darktheme");
+    }
+
+    // FAQ toggle
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        // toggle display
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
