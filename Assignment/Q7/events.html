@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events Dashboard</title>
+  <link rel="stylesheet" href="events.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #0078d7;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 26px;
+    }
+
+    main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .month-card {
+      background: white;
+      width: 80%;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+    }
+
+    .month-card h2 {
+      color: #0078d7;
+      border-bottom: 2px solid #0078d7;
+      padding-bottom: 5px;
+    }
+
+    .event {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .event:last-child {
+      border-bottom: none;
+    }
+
+    footer {
+      background: #0078d7;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>📅 Event Renderer</header>
+
+  <main>
+    <div id="events-container"></div>
+  </main>
+
+  <footer>Created by: Prince Patel [24CE092]</footer>
+
+  <script src="events.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Utilities Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 15px;
+      font-size: 28px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .test-box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: left;
+      padding: 15px;
+    }
+
+    .test-box h3 {
+      color: #0078d7;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    code {
+      display: block;
+      background: #f0f0f0;
+      padding: 8px;
+      border-radius: 5px;
+      margin: 5px 0;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #0078d7;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>🧩 String Utilities Library Demo</header>
+
+  <main id="demo"></main>
+
+  <footer>Created by: Prince Patel [24CE092]</footer>
+
+  <script type="module">
+    import { toTitleCase, trimExtraSpaces, wordFrequency, maskEmail } from './string-utils.js';
+
+    const demoContainer = document.getElementById("demo");
+
+    // Example inputs
+    const examples = [
+      {
+        title: "1️⃣ toTitleCase()",
+        input: "hello world from charusat university",
+        output: toTitleCase("hello world from charusat university")
+      },
+      {
+        title: "2️⃣ trimExtraSpaces()",
+        input: "   This    is   a   spaced   text!   ",
+        output: trimExtraSpaces("   This    is   a   spaced   text!   ")
+      },
+      {
+        title: "3️⃣ wordFrequency()",
+        input: "This is a test. This test is simple.",
+        output: JSON.stringify(wordFrequency("This is a test. This test is simple."), null, 2)
+      },
+      {
+        title: "4️⃣ maskEmail()",
+        input: "princepatel123@gmail.com",
+        output: maskEmail("princepatel123@gmail.com")
+      }
+    ];
+
+    // Render results
+    demoContainer.innerHTML = examples.map(ex => `
+      <div class="test-box">
+        <h3>${ex.title}</h3>
+        <strong>Input:</strong>
+        <code>${ex.input}</code>
+        <strong>Output:</strong>
+        <code>${ex.output}</code>
+      </div>
+    `).join("");
+  </script>
+</body>
+</html>

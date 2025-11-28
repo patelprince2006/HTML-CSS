@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #0078d7;
+  color: white;
+  padding: 15px;
+  font-size: 28px;
+}
+
+.todo-container {
+  background: white;
+  display: inline-block;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 350px;
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#todo-input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}
+
+.filters {
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  background: #e9ecef;
+  border: none;
+  padding: 6px 12px;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #0078d7;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.todo-item {
+  background: #f9f9f9;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+footer {
+  background: #0078d7;
+  color: white;
+  padding: 10px;
+  margin-top: 30px;
+}

@@ -8,10 +8,11 @@ class Car {
     $this->model = $model;
   }
   public function message() {
-    return "My car is a " . $this->color . " " . $this->model . "!";
+    echo "My car is a " . $this->color . " " . $this->model . "!";
   }
 }
 
 $myCar = new Car("red", "Volvo");
+mycar.message();
 var_dump($myCar);
 ?>

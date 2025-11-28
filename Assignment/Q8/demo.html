@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Iterable Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 15px;
+      font-size: 28px;
+    }
+
+    main {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: left;
+      padding: 20px;
+    }
+
+    code {
+      display: block;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #0078d7;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>🔁 Custom Iterable: Range(start, end, step)</header>
+
+  <main id="demo"></main>
+
+  <footer>Created by: Prince Patel [24CE092]</footer>
+
+  <script type="module">
+    import { Range, testIteration, testSpread } from './iterable.js';
+
+    const demo = document.getElementById("demo");
+
+    const range1 = new Range(1, 5);
+    const range2 = new Range(10, 50, 10);
+    const range3 = new Range(10, 0, -2);
+
+    demo.innerHTML = `
+      <div class="box">
+        <h3>1️⃣ for...of Loop</h3>
+        <code>
+for (const n of new Range(1, 5)) console.log(n);
+→ [${testIteration().join(", ")}]
+        </code>
+      </div>
+
+      <div class="box">
+        <h3>2️⃣ Spread Operator</h3>
+        <code>
+[...new Range(10, 50, 10)]
+→ [${testSpread().join(", ")}]
+        </code>
+      </div>
+
+      <div class="box">
+        <h3>3️⃣ Backward Range (with negative step)</h3>
+        <code>
+[...new Range(10, 0, -2)]
+→ [${[...range3].join(", ")}]
+        </code>
+      </div>
+    `;
+  </script>
+</body>
+</html>
